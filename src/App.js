@@ -14,7 +14,6 @@ class App extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<h3 className='text-center'>hello from App</h3>
 				<Navbar />
 				<Switch>
 					<Route exact path='/' component={ProductList}></Route>
