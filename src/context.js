@@ -6,17 +6,32 @@ const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
     state={
-        products: storeProducts,
+        products: [],
         detailProduct: detailProduct
     }
 
+    componentDidMount(){
+        this.setProducts();
+    }
+
+    setProducts = ()=>{
+        let tempProducts=[];
+        storeProducts.forEach(obj=>{
+            const singleItem ={...obj};
+            tempProducts = [...tempProducts,singleItem];
+        });
+        this.setState(()=>{
+            return {products: tempProducts}
+        });
+    };
+
     handleDetail= ()=>{
         console.log('hello from detail');
-    }
+    };
 
     addToCart= ()=>{
         console.log('hello from add to cart');
-    }
+    };
 
     render() {
         return (
@@ -29,8 +44,8 @@ class ProductProvider extends Component {
                 {this.props.children}
             </ProductContext.Provider>
         );
-    }
-}
+    };
+};
 
 const ProductConsumer = ProductContext.Consumer;
 
