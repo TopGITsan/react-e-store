@@ -12,6 +12,7 @@ export default class Product extends Component {
 				<div className="card">
 					<ProductConsumer>
 						{ value=>
+							(
 							<div className="img-container p-5" onClick={()=>value.handleDetail(id)}>
 								<Link to='/details'>
 									<img src={img} alt="product" className='card-img-top'/>
@@ -22,6 +23,7 @@ export default class Product extends Component {
 										(<i className='fas fa-cart-plus'></i>)}
 								</button>
 							</div>
+							)
 						}
 					</ProductConsumer>
 					{/* card footer */}
