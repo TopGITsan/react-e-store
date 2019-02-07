@@ -9,7 +9,7 @@ class ProductProvider extends Component {
         products: [],
         detailProduct: detailProduct,
         cart: [],
-        modalOpen: true,
+        modalOpen: false,
         modalProduct: detailProduct
     }
 
@@ -79,7 +79,7 @@ class ProductProvider extends Component {
                     ...this.state,
                     handleDetail: this.handleDetail,
                     addToCart: this.addToCart,
-                    openModel: this.openModal,
+                    openModal: this.openModal,
                     closeModal: this.closeModal
                     }}>
                 {this.props.children}
